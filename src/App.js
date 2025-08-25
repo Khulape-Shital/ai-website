@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Header from "./components/custom/Header";
+import Hero from "./components/custom/Hero";
+import ChatView from "./components/custom/ChatView";
+// import { MessagesProvider } from "./MessagesContext";
+import {MessagesContext} from "./context/MessagesContext"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <MessagesContext>
+      <div className="min-h-screen bg-gray-900 text-white">
+        {/* Top Navbar */}
+        <Header />
+
+        {/* Hero Section */}
+        <Hero />
+
+        {/* Chat Section */}
+        <ChatView />
+      </div>
+    </MessagesContext>
   );
 }
 
